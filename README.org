@@ -1,0 +1,24 @@
+#+title: Kiwi
+
+#+begin_verse
+This is an HTTP server built using bare-runtime, utilizing the Holesail library for peer-to-peer (P2P) tunneling capabilities. The server enables access to its resources outside a local network, allowing users to connect from anywhere in the world.
+
+Kiwi is based in these libraries:
+[[https://holesail.io/]]
+[[https://github.com/delvedor/find-my-way]]
+#+end_verse
+* Requirements:
+#+begin_src
+npm i bare-runtime
+#+end_src
+* Install:
+#+begin_src
+git clone https://github.com/nexhero/Kiwi.git
+cd Kiwi
+npm install
+#+end_src
+* Example:
+The repository comes with a example server
+#+begin_src
+bare example/demo-kiwi.js
+#+end_src
