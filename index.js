@@ -27,9 +27,8 @@ class Kiwi {
       if (buffSeed !== null) {
         const holeServer =  new HolesailServer();
         holeServer.serve({port:this.port, address:"127.0.0.1",buffSeed:buffSeed}, () => {
-          console.log('Server started');
-          console.log(holeServer.getPublicKey());
-
+          console.log('Holesail Server Started');
+          console.log("Connection string: "+holeServer.getPublicKey());
         })
       }
     })
