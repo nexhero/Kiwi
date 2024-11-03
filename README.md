@@ -1,9 +1,9 @@
 
 # Table of Contents
 
-1.  [Requirements:](#org6e120ff)
-2.  [Install:](#org2419259)
-3.  [Example:](#org23bf955)
+1.  [Requirements:](#orgff74ade)
+2.  [Install:](#org13c0697)
+3.  [Example:](#org81e8e7c)
 
 <p class="verse">
 This is an HTTP server built using bare-runtime, utilizing the Holesail library for peer-to-peer (P2P) tunneling capabilities. The server enables access to its resources outside a local network, allowing users to connect from anywhere in the world.<br />
@@ -14,14 +14,14 @@ Kiwi is based in these libraries:<br />
 </p>
 
 
-<a id="org6e120ff"></a>
+<a id="orgff74ade"></a>
 
 # Requirements:
 
     npm i bare-runtime
 
 
-<a id="org2419259"></a>
+<a id="org13c0697"></a>
 
 # Install:
 
@@ -30,7 +30,7 @@ Kiwi is based in these libraries:<br />
     npm install
 
 
-<a id="org23bf955"></a>
+<a id="org81e8e7c"></a>
 
 # Example:
 
