@@ -15,6 +15,7 @@
     "find-my-way": "^9.1.0",
     "holesail-server": "^1.4.1",
     "trouter": "^4.0.0",
-    "udx-native": "^1.14.0"
+    "udx-native": "^1.14.0",
+    "url-pattern": "^1.0.3"
   }
 }
