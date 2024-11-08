@@ -1,21 +1,22 @@
 
 # Table of Contents
 
-1.  [Libraries](#org12a9895)
-2.  [Requirements:](#org938429f)
-3.  [Install:](#orgd6b48d9)
-4.  [How to use:](#orgf107208)
-5.  [Example:](#org76c716e)
+1.  [Libraries](#org7f25847)
+2.  [Requirements:](#org24b70fa)
+3.  [Install:](#org6d6b036)
+4.  [How to use:](#org7deac37)
+    1.  [Create server object](#orga08191b)
+    2.  [Register new route](#orgd8cf3ac)
+    3.  [Register middleware](#org5f0c4e2)
+    4.  [Start up server](#orgbcd3c52)
+5.  [Example:](#orgd157c28)
 
 <p class="verse">
 This is an HTTP server built using bare-runtime, utilizing the Holesail library for peer-to-peer (P2P) tunneling capabilities. The server enables access to its resources outside a local network, allowing users to connect from anywhere in the world.<br />
-<br />
-<br />
-<br />
 </p>
 
 
-<a id="org12a9895"></a>
+<a id="org7f25847"></a>
 
 # Libraries
 
@@ -25,14 +26,14 @@ Kiwi is based in those libraries:
 -   <https://github.com/delvedor/find-my-way>
 
 
-<a id="org938429f"></a>
+<a id="org24b70fa"></a>
 
 # Requirements:
 
     npm i -g bare
 
 
-<a id="orgd6b48d9"></a>
+<a id="org6d6b036"></a>
 
 # Install:
 
@@ -41,16 +42,22 @@ Kiwi is based in those libraries:
     npm install
 
 
-<a id="orgf107208"></a>
+<a id="org7deac37"></a>
 
 # How to use:
 
-Create server object
+
+<a id="orga08191b"></a>
+
+## Create server object
 
     const port = 3001
     const server = new Kiwi(port)
 
-Register new route
+
+<a id="orgd8cf3ac"></a>
+
+## Register new route
 
     server.router.on('GET','/name/:name',(req,res,params)=>{
       console.log(params)
@@ -58,21 +65,27 @@ Register new route
       res.end("Hello: "+params.name)
     })
 
-Register middleware
+
+<a id="org5f0c4e2"></a>
+
+## Register middleware
 
     const nameMW = (req,res)=>{
       res.write("This is middleware for route /name \n")
     }
-    server.useMiddleware('/name/*',name)
+    server.useMiddleware('/name/*',nameWM)
 
-Start up server
+
+<a id="orgbcd3c52"></a>
+
+## Start up server
 
     server.start()
     // Or start up server with holesail
     //server.start("63d709c4f93884009c3e8db69ad1dfd2000ca5b6a5ae1984a23acffa75d058c2")
 
 
-<a id="org76c716e"></a>
+<a id="orgd157c28"></a>
 
 # Example:
 

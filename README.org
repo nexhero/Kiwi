@@ -2,9 +2,6 @@
 
 #+begin_verse
 This is an HTTP server built using bare-runtime, utilizing the Holesail library for peer-to-peer (P2P) tunneling capabilities. The server enables access to its resources outside a local network, allowing users to connect from anywhere in the world.
-
-
-
 #+end_verse
 
 * Libraries
@@ -24,13 +21,13 @@ cd Kiwi
 npm install
 #+end_src
 * How to use:
-Create server object
+** Create server object
 #+begin_src
 const port = 3001
 const server = new Kiwi(port)
 #+end_src
 
-Register new route
+** Register new route
 #+begin_src javascript
 server.router.on('GET','/name/:name',(req,res,params)=>{
   console.log(params)
@@ -39,15 +36,15 @@ server.router.on('GET','/name/:name',(req,res,params)=>{
 })
 #+end_src
 
-Register middleware
+** Register middleware
 #+begin_src javascript
 const nameMW = (req,res)=>{
   res.write("This is middleware for route /name \n")
 }
-server.useMiddleware('/name/*',name)
+server.useMiddleware('/name/*',nameWM)
 #+end_src
 
-Start up server
+** Start up server
 #+begin_src javascript
 server.start()
 // Or start up server with holesail
