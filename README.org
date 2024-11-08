@@ -43,14 +43,13 @@ Register middleware
 #+begin_src javascript
 const nameMW = (req,res)=>{
   res.write("This is middleware for route /name \n")
-
 }
 server.useMiddleware('/name/*',name)
 #+end_src
-Start up server
-#+begin_src
-server.start()
 
+Start up server
+#+begin_src javascript
+server.start()
 // Or start up server with holesail
 //server.start("63d709c4f93884009c3e8db69ad1dfd2000ca5b6a5ae1984a23acffa75d058c2")
 #+end_src
