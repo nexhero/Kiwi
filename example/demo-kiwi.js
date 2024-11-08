@@ -3,9 +3,11 @@ const Kiwi = require('../index')
 const port = 3001
 const server = new Kiwi(port)
 
+////////////////////////
+// response functions //
+////////////////////////
 const name = (req,res)=>{
   res.write("middleware /name/* \n")
-
 }
 const nameProfile = (req,res)=>{
   res.write("middleware only for profile\n")
@@ -14,10 +16,17 @@ const nameProfile = (req,res)=>{
 const root = (req,res)=>{
   res.write("MIDDLEWARE ROOT")
 }
+
+////////////////
+// Middleware //
+////////////////
 server.useMiddleware('/name/*',name)
-server.useMiddleware('/name/*/profile')
+server.useMiddleware('/name/*/profile',nameProfile)
 server.useMiddleware('/',root)
 
+////////////////
+// end-points //
+////////////////
 server.router.on('GET','/',(req,res,params)=>{
   res.setHeader('Content-Type', 'text/html')
   res.end("<h1>HELLO P2P Web Server :)</h1>")
@@ -34,8 +43,13 @@ server.router.on('GET','/name/:name/profile',(req,res,params)=>{
   res.setHeader('Content-Type', 'text/plain')
   res.end("PROFILE FOR: "+params.name)
 })
-// server.start("63d709c4f93884009c3e8db69ad1dfd2000ca5b6a5ae1984a23acffa75d058c2")
-server.start()
-//
+
+////////////////////////////////
+// start up server listening, //
+// and start holesail service //
+////////////////////////////////
+server.start("63d709c4f93884009c3e8db69ad1dfd2000ca5b6a5ae1984a23acffa75d058c2")
+// server.start()
+
 console.log("\n\nVisit")
 console.log(`http://localhost:${port}/name/pears\n\n`)

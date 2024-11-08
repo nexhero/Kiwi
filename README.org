@@ -3,19 +3,56 @@
 #+begin_verse
 This is an HTTP server built using bare-runtime, utilizing the Holesail library for peer-to-peer (P2P) tunneling capabilities. The server enables access to its resources outside a local network, allowing users to connect from anywhere in the world.
 
-Kiwi is based in these libraries:
-https://holesail.io/
-https://github.com/delvedor/find-my-way
+
+
 #+end_verse
+
+* Libraries
+Kiwi is based in those libraries:
+- https://holesail.io/
+- https://github.com/delvedor/find-my-way
+
+
 * Requirements:
 #+begin_src
-npm i bare-runtime
+npm i -g bare
 #+end_src
 * Install:
 #+begin_src
 git clone https://github.com/nexhero/Kiwi.git
 cd Kiwi
 npm install
+#+end_src
+* How to use:
+Create server object
+#+begin_src
+const port = 3001
+const server = new Kiwi(port)
+#+end_src
+
+Register new route
+#+begin_src javascript
+server.router.on('GET','/name/:name',(req,res,params)=>{
+  console.log(params)
+  res.setHeader('Content-Type', 'text/plain')
+  res.end("Hello: "+params.name)
+})
+#+end_src
+
+Register middleware
+#+begin_src javascript
+const nameMW = (req,res)=>{
+  res.write("This is middleware for route /name \n")
+
+}
+server.useMiddleware('/name/*',name)
+#+end_src
+Start up server
+#+begin_src
+server.start()
+
+// Or start up server with holesail
+//server.start("63d709c4f93884009c3e8db69ad1dfd2000ca5b6a5ae1984a23acffa75d058c2")
 #+end_src
 * Example:
 The repository comes with a example server

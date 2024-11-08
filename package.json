@@ -1,17 +1,16 @@
 {
-  "name": "wiki",
+  "name": "kiwi",
   "version": "1.0.0",
-  "description": "native http server for bare modules",
+  "description": "native http server for bare runtime",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "David Pereira",
   "license": "MIT",
   "dependencies": {
     "bare-assert": "^1.0.1",
     "bare-http1": "^3.8.2",
-    "bare-runtime-linux-x64": "^1.10.1",
     "find-my-way": "^9.1.0",
     "holesail-server": "^1.4.1",
     "trouter": "^4.0.0",
