@@ -1,23 +1,23 @@
 
 # Table of Contents
 
-1.  [Libraries](#org6b31f20)
-2.  [Requirements:](#orgf2ef68e)
-3.  [Install:](#org5d4ae07)
-4.  [Static HTTP Server P2p:](#orgd9cc5ad)
-5.  [How to use:](#org7aea2ff)
-    1.  [Create server object](#org05c2ab8)
-    2.  [Register new route](#orgb2ec797)
-    3.  [Register middleware](#org9035963)
-    4.  [Start up server](#org0b70d1e)
-6.  [Example:](#orga8f78b9)
+1.  [Libraries](#org38d9a29)
+2.  [Requirements:](#org1bf4abf)
+3.  [Install:](#org6fc6753)
+4.  [Static HTTP Server P2p:](#orgaa7cc21)
+5.  [How to use:](#orge69cc3e)
+    1.  [Create server object](#orgd4be4ec)
+    2.  [Register new route](#org10c26b3)
+    3.  [Register middleware](#orgd68890c)
+    4.  [Start up server](#org5a97af4)
+6.  [Example:](#org66c99a2)
 
 <p class="verse">
 This is an HTTP server built using bare-runtime, utilizing the Holesail library for peer-to-peer (P2P) tunneling capabilities. The server enables access to its resources outside a local network, allowing users to connect from anywhere in the world.<br />
 </p>
 
 
-<a id="org6b31f20"></a>
+<a id="org38d9a29"></a>
 
 # Libraries
 
@@ -27,14 +27,14 @@ Kiwi is based in those libraries:
 -   <https://github.com/delvedor/find-my-way>
 
 
-<a id="orgf2ef68e"></a>
+<a id="org1bf4abf"></a>
 
 # Requirements:
 
     npm i -g bare
 
 
-<a id="org5d4ae07"></a>
+<a id="org6fc6753"></a>
 
 # Install:
 
@@ -43,19 +43,19 @@ Kiwi is based in those libraries:
     npm install
 
 
-<a id="orgd9cc5ad"></a>
+<a id="orgaa7cc21"></a>
 
 # Static HTTP Server P2p:
 
-    bare example/demo-kiwi.js -p 8080 -d /var/www/html
+    bare kiwi.js -p 8080 -d /var/www/html
 
 
-<a id="org7aea2ff"></a>
+<a id="orge69cc3e"></a>
 
 # How to use:
 
 
-<a id="org05c2ab8"></a>
+<a id="orgd4be4ec"></a>
 
 ## Create server object
 
@@ -63,7 +63,7 @@ Kiwi is based in those libraries:
     const server = new Kiwi(port)
 
 
-<a id="orgb2ec797"></a>
+<a id="org10c26b3"></a>
 
 ## Register new route
 
@@ -74,7 +74,7 @@ Kiwi is based in those libraries:
     })
 
 
-<a id="org9035963"></a>
+<a id="orgd68890c"></a>
 
 ## Register middleware
 
@@ -84,7 +84,7 @@ Kiwi is based in those libraries:
     server.useMiddleware('/name/*',nameWM)
 
 
-<a id="org0b70d1e"></a>
+<a id="org5a97af4"></a>
 
 ## Start up server
 
@@ -93,7 +93,7 @@ Kiwi is based in those libraries:
     //server.start("63d709c4f93884009c3e8db69ad1dfd2000ca5b6a5ae1984a23acffa75d058c2")
 
 
-<a id="orga8f78b9"></a>
+<a id="org66c99a2"></a>
 
 # Example:
 
