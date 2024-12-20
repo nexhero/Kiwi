@@ -20,6 +20,10 @@ git clone https://github.com/nexhero/Kiwi.git
 cd Kiwi
 npm install
 #+end_src
+* Static HTTP Server P2p:
+#+begin_src
+bare example/demo-kiwi.js -p 8080 -d /var/www/html
+#+end_src
 * How to use:
 ** Create server object
 #+begin_src
