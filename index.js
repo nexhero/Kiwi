@@ -9,7 +9,6 @@ class Kiwi {
     this.server = this.server = http.createServer((req,res)=>{
       this.handler(req,res)
     })
-    // this.server._timeout = 200
     this.port = port
     this.router = router()
     this.mware = {}
@@ -37,7 +36,6 @@ class Kiwi {
 
   }
   handler=(req,res)=>{
-
     let url = req.url
     for (let mURL in this.mware) {
       var pattern = new UrlPattern(mURL);
