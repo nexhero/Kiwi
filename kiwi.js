@@ -1,3 +1,5 @@
+#!/usr/bin/bare
+
 const Kiwi = require('./index')
 const process = require('bare-process')
 const UrlPattern = require('url-pattern');

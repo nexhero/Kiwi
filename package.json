@@ -1,10 +1,13 @@
 {
-  "name": "kiwi",
-  "version": "1.0.0",
+  "name": "@nexhero/kiwi",
+  "version": "1.0.3",
   "description": "native http server for bare runtime",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "kiwi": "./kiwi.js"
   },
   "author": "David Pereira",
   "license": "MIT",
@@ -21,6 +24,7 @@
     "fast-querystring": "^1.0.0",
     "hyper-cmd-lib-keys": "^0.1.1",
     "hyperdht": "^6.20.1",
+    "mime-db": "^1.53.0",
     "safe-regex2": "^4.0.0",
     "trouter": "^4.0.0",
     "udx-native": "^1.14.0",
